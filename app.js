@@ -104,3 +104,20 @@ async function findLetter(text){
 }
 
 findLetter("type something")
+
+
+window.addEventListener('load', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setPosition, showError);
+    }
+    else {
+        alert("Navegador não suporta geolocalização");
+    }
+    function setPosition(position){
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+    }
+    function showError(error){
+        alert(`erro: ${error.message}`)
+    }
+})
